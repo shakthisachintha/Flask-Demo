@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body style="text-align: center;">
+
+    <!-- {{ x }} - Render Single Variable x -->
+    <div>
+        <h1>Welcome to Flask Jinja Templates</h1>
+        <h2>Hi, {{name}} </h2>
+    </div>   
+    
+    <!-- Conditional Rendering -->
+    <div>
+        <h3>Your are {{ "an Admin" if isAdmin else "a Customer" }}</h3>
+
+        {% if isAdmin %}
+            <h3>This section only available to Admins</h3>
+        {% else %}
+            <h3>This section only available to Customers</h3>
+        {% endif %}
+
+    </div>
+
+    <!-- Looping controllers-->
+    <div>
+        <ul>
+            {% for course in courses %}
+                <li>{{ course.id }} {{ course['name'] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+
+</body>
+</html>
